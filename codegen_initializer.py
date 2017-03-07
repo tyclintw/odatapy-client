@@ -544,7 +544,7 @@ class codegen_initializer:
                 elif element_type.get_type_kind() == edm_type_kind_t.Enum:
                     param.member_strong_type_name = _schema_info.class_map[element_type.get_name()].class_name
                     param.member_type = PROPERTY_TYPE.E_COLLECTION_ENUM
-            param.member_name = param_iter.get_param_name()
+            param.member_name = param_iter.get_param_name().lower()
             _operation_info.params.append(param)
 
         _info.operation_info = _operation_info
